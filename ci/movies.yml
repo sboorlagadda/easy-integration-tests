@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: easystack/ci
+    tag: latest
+
+inputs:
+- name: configserver-jar
+- name: eureka-jar
+- name: apigateway-jar
+- name: authserver-jar
+- name: catalog-jar
+- name: easy-integration-tests
+
+run:
+  path: easy-integration-tests/ci/movies.sh
